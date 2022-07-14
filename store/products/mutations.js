@@ -13,5 +13,11 @@ export default {
   },
   all (state, payload) {
     state.products = payload
+  },
+  topSellerProducts (state, payload) {
+    state.topSellerProducts = payload
+  },
+  newArrivalProducts (state, payload) {
+    state.newArrivalProducts = payload
   }
 }

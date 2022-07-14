@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <div class="row">
-      <h1>Top Products</h1>
+  <div class="pt-10">
+    <div class="row category-title">
+      <h1> {{ title }} </h1>
     </div>
     <div class="top-products-grid">
       <ProductItem v-for="data in dataSource" :key="data.id" :data="data" />
@@ -11,8 +11,12 @@
 
 <script>
 export default {
-  name: 'TopProducts',
+  name: 'ShowcaseProducts',
   props: {
+    title: {
+      type: String,
+      required: true
+    },
     dataSource: {
       type: Array,
       default () {
@@ -33,6 +37,10 @@ export default {
 </script>
 
 <style lang="scss">
+.category-title {
+    padding: 0;
+}
+
 .top-products-grid {
     display: grid;
     grid-column-gap: 32px;
@@ -63,11 +71,4 @@ export default {
         grid-template-columns: repeat(4,1fr);
     }
 }
-
-// /* Larger than Desktop HD */
-// @media (min-width: 1200px) {
-//     .top-products-grid {
-//         grid-template-columns: repeat(4,1fr);
-//     }
-// }
 </style>

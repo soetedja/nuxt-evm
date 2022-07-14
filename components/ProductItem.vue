@@ -6,7 +6,7 @@
         <span>Best Seller</span>
       </div>
       <div class="sold">
-        <span>99 Sold</span>
+        <span>{{ data.sold }} Sold</span>
       </div>
       <div class="stars">
         <StarRating :rating="data.rating" />
@@ -21,8 +21,15 @@
       </p>
       <p class="price">
         Price:
-        {{ data.price }}
-      </p> <a href="/products/438148" class="button button-light">Get More Info</a>
+        <span class="normal">${{ data.price }}</span>
+        <span class="discount">${{ data.price }}</span>
+      </p>
+      <button class="button-primary">
+        BUY
+      </button>
+      <button class="button-secondary">
+        ADD TO CART
+      </button>
     </div>
   </div>
 </template>
@@ -74,6 +81,7 @@ export default {
     .sold,
     .badge,
     .stars {
+    font-weight: bold;
       position: absolute;
       display: flex;
       justify-content: center;
@@ -92,7 +100,7 @@ export default {
     .badge {
       top: 0;
       left: 0;
-      background-color: #c92502;
+      background-color: #b52700;
       border-radius: 0 0 16px 0;
     }
     .stars {
@@ -114,6 +122,14 @@ export default {
       transform: translateY(100%);
       transition: all .3s ease;
     }
+  }
+  span.normal {
+    text-decoration: line-through;
+    color:gray
+  }
+  span.discount {
+    font-size: 2.5rem;
+    font-weight: bold;
   }
 }
 </style>

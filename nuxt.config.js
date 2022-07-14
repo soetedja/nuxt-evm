@@ -37,7 +37,8 @@ export default {
   fontawesome: {
     icons: {
       solid: ['faHome', 'faStar'],
-      regular: ['faCircle']
+      regular: ['faCircle'],
+      brands: ['faTwitterSquare', 'faInstagram', 'faFacebookSquare', 'faLinkedin']
     }
   },
   // Modules: https://go.nuxtjs.dev/config-modules
