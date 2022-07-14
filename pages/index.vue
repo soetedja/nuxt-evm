@@ -4,18 +4,20 @@
       <Slider :data-source="slider" />
     </div>
     <div class="container">
-      <TopProducts :data-source="products" />
+      <ShowcaseProducts :data-source="topSellerProducts" :title="'Top Sellers'" />
+      <ShowcaseProducts :data-source="newArrivalProducts" :title="'New Arrivals'" />
     </div>
   </div>
 </template>
 
 <script>
-import TopProducts from '../components/TopProducts.vue'
+import ShowcaseProducts from '../components/ShowcaseProducts.vue'
 export default {
   name: 'IndexPage',
-  components: { TopProducts },
+  components: { ShowcaseProducts },
   async fetch () {
-    await this.getProducts()
+    await this.getTopSellerProducts()
+    await this.getNewArrivalProducts()
     await this.getSlider()
   },
   head () {
@@ -36,16 +38,22 @@ export default {
     }
   },
   computed: {
-    products () {
-      return this.$store.state.products.products
+    topSellerProducts () {
+      return this.$store.state.products.topSellerProducts
+    },
+    newArrivalProducts () {
+      return this.$store.state.products.newArrivalProducts
     },
     slider () {
       return this.$store.state.slider.slider
     }
   },
   methods: {
-    async getProducts () {
-      await this.$store.dispatch('products/getAll')
+    async getTopSellerProducts () {
+      await this.$store.dispatch('products/getTopSellerProducts')
+    },
+    async getNewArrivalProducts () {
+      await this.$store.dispatch('products/getNewArrivalProducts')
     },
     async getSlider () {
       await this.$store.dispatch('slider/getAll')
