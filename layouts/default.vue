@@ -5,9 +5,9 @@
         <div class="logo-container">
           <NuxtLogo />
         </div>
-        <a href="/" class="active">Home</a>
-        <a href="/products">Products</a>
-        <a href="/about">About</a>
+        <a href="/" :class="{ active: $nuxt.$route.name == 'index'}">Home</a>
+        <a href="/products" :class="{active : $nuxt.$route.name == 'products' || $nuxt.$route.name == 'products-id'}">Products</a>
+        <!-- <a href="/about" :class="{active : $nuxt.$route.name == 'about'}">About</a> -->
         <a href="javascript:void(0);" class="icon" @click="openNav">
           <font-awesome-icon :icon="['far', 'circle']" />
         </a>
@@ -30,6 +30,11 @@ export default {
   data () {
     return {
       isActive: false
+    }
+  },
+  computed: {
+    page () {
+      return this.$store.state.page
     }
   },
   methods: {

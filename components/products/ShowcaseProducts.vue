@@ -10,8 +10,10 @@
 </template>
 
 <script>
+import ProductItem from './ProductItem.vue'
 export default {
   name: 'ShowcaseProducts',
+  components: { ProductItem },
   props: {
     title: {
       type: String,
@@ -25,14 +27,10 @@ export default {
       required: false
     }
   },
-
-  computed: {
-  },
+  computed: {},
   mounted () {
   },
-
-  methods: {
-  }
+  methods: {}
 }
 </script>
 

@@ -1,7 +1,7 @@
 <template>
-  <div class="wrapper">
+  <div class="wrapper footer-wrapper">
     <div class="row footer">
-      <div class="col six">
+      <div class="col six company">
         <div class="company-details">
           <div class="row company-logo">
             <NuxtLogo />
@@ -61,12 +61,22 @@ export default {
 </script>
 
 <style lang="scss">
+.footer-wrapper{
+  background-color: #f9f9f9;
+}
+
 .footer {
   margin: 75px 0;
+  padding-top: 20px
+}
+.company {
+    display: flex;
+    justify-content: space-around;
 }
 .company-details {
   width: 350px;
   margin-bottom: 20px;
+  text-align: center;
 
   .company-logo {
     margin-top: 2em;
@@ -76,11 +86,11 @@ export default {
   }
 
   .address {
-    margin-top: 10px
+    margin-top: 20px
   }
 
   .social {
-    margin-top: 20px;
+    margin-top: 30px;
     display: flex;
     color: #0f5185;
     align-items: center;
