@@ -1,8 +1,5 @@
 <template>
   <div>
-    <div class="row">
-      <Slider :data-source="slider" />
-    </div>
     <div class="container">
       <ShowcaseProducts :data-source="topSellerProducts" :title="'Top Sellers'" />
       <ShowcaseProducts :data-source="newArrivalProducts" :title="'New Arrivals'" />
@@ -12,10 +9,9 @@
 
 <script>
 import ShowcaseProducts from '~/components/products/ShowcaseProducts.vue'
-import Slider from '~/components/homepage/Slider.vue'
 export default {
-  name: 'IndexPage',
-  components: { ShowcaseProducts, Slider },
+  name: 'IndexProducts',
+  components: { ShowcaseProducts },
   async fetch () {
     await this.getTopSellerProducts()
     await this.getNewArrivalProducts()
@@ -23,7 +19,7 @@ export default {
   },
   head () {
     return {
-      title: 'Home - NuxtEVM',
+      title: 'Products - NuxtEVM',
       meta: [
         {
           hid: 'description',

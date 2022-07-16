@@ -1,28 +1,32 @@
 <template>
   <div class="product">
-    <div class="product-img">
-      <img :src="data.image" alt="">
-      <div v-if="data.isBestSeller" class="badge">
-        <span>Best Seller</span>
+    <NuxtLink :to="{ name: 'products-id', params: { id: data.id } }">
+      <div class="product-img">
+        <img :src="data.image" alt="">
+        <div v-if="data.isBestSeller" class="badge">
+          <span>Best Seller</span>
+        </div>
+        <div class="sold">
+          <span>{{ data.sold }} Sold</span>
+        </div>
+        <div class="stars">
+          <StarRating :rating="data.rating" />
+        </div>
+        <div class="overview">
+          {{ data.description }}
+        </div>
       </div>
-      <div class="sold">
-        <span>{{ data.sold }} Sold</span>
-      </div>
-      <div class="stars">
-        <StarRating :rating="data.rating" />
-      </div>
-      <div class="overview">
-        {{ data.description }}
-      </div>
-    </div>
+    </NuxtLink>
     <div class="product-details">
-      <p class="title">
-        {{ data.name }}
-      </p>
+      <NuxtLink :to="{ name: 'products-id', params: { id: data.id } }">
+        <p class="title">
+          {{ data.name }}
+        </p>
+      </NuxtLink>
       <p class="price">
         Price:
         <span class="normal">${{ data.price }}</span>
-        <span class="discount">${{ data.price }}</span>
+        <span class="discount">${{ data.discount }}</span>
       </p>
       <button class="button-primary">
         BUY

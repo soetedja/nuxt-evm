@@ -19,5 +19,13 @@ export default {
   },
   newArrivalProducts (state, payload) {
     state.newArrivalProducts = payload
+  },
+  productDetails (state, payload) {
+    state.productDetails = payload
+  },
+  selectVariant (state, payload) {
+    state.productDetails.discount = payload.price
+    state.productDetails.image = payload.image
+    state.productDetails.variantDescription = payload.description
   }
 }

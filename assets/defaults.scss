@@ -32,6 +32,7 @@ $background-color_2: #fff;
 .topnav {
     padding: 25px 0 15px 0;
     position: fixed;
+    top: 0;
     z-index: 1;
     overflow: hidden;
     background-color: $background-color_2;
@@ -239,6 +240,10 @@ a:hover {
     padding-top: 10px
 }
 
+.mt-10 {
+    padding-top: 10px
+}
+
 
 @media (min-width: 550px) {
     .col {
@@ -251,8 +256,24 @@ a:hover {
         width: 22%;
     }
 
+    .col.four {
+        width: 30.6666666667%;
+    }
+
+    .col.five {
+        width: 43.3333333333%;
+    }
+
     .col.six {
         width: 48%;
+    }
+
+    .col.eight {
+        width: 65.3333333333%;;
+    }
+
+    .col.nine {
+        width: 74%;
     }
 
     .col.twelve {
@@ -260,3 +281,7 @@ a:hover {
         margin-left: 0;
     }
 }
+
+.u-max-full-width {
+    max-width: 100%;
+    box-sizing: border-box; }
