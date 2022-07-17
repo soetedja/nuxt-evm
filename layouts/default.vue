@@ -5,8 +5,11 @@
         <div class="logo-container" :hidden="isActive">
           <NuxtLogo />
         </div>
-        <a href="/" :class="{ active: $nuxt.$route.name == 'index'}">Home</a>
-        <a href="/products" :class="{active : $nuxt.$route.name == 'products' || $nuxt.$route.name == 'products-id'}">Products</a>
+        <a href="/" :class="{ active: $nuxt.$route.name == 'index' }">Home</a>
+        <a
+          href="/products"
+          :class="{ active: $nuxt.$route.name == 'products' || $nuxt.$route.name == 'products-id' }"
+        >Products</a>
         <!-- <a href="/about" :class="{active : $nuxt.$route.name == 'about'}">About</a> -->
         <a href="javascript:void(0);" class="icon" @click="openNav">
           <font-awesome-icon :icon="['far', 'circle']" />
@@ -47,16 +50,16 @@ export default {
 
 <style lang="scss">
 .wrapper-nav {
-    position: relative;
-    max-width: 1360px;
-    width: 100%;
-    box-sizing: border-box;
-    margin: 0 auto;
+  position: relative;
+  max-width: 1360px;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0 auto;
 
-    &:after {
-        content: "";
-        display: table;
-        clear: both;
-    }
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
 }
 </style>

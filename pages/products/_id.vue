@@ -76,7 +76,7 @@ export default {
   },
   head () {
     return {
-      title: 'Home - NuxtEVM',
+      title: this.productDetails.name ? this.productDetails.name : '' + ' - NuxtEVM',
       meta: [
         {
           hid: 'description',
@@ -108,24 +108,24 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
 .product-img {
   margin-top: 20px;
+
   .badge {
-      font-weight: bold;
-      position: absolute;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 0 10px;
-      height: 40px;
-      color: #fff;
-      box-shadow: 0 4px 6px -1px rgb(0 0 0 / 10%), 0 2px 4px -1px rgb(0 0 0 / 6%);
-      top: 20px;
-      left: 10px;
-      background-color: #b52700;
-      border-radius: 0 0 16px 0;
-    }
+    font-weight: bold;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+    height: 40px;
+    color: #fff;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 10%), 0 2px 4px -1px rgb(0 0 0 / 6%);
+    top: 20px;
+    left: 10px;
+    background-color: #b52700;
+    border-radius: 0 0 16px 0;
+  }
 }
 
 .title {
@@ -155,6 +155,7 @@ p.price {
 
 .product-details {
   margin: 0 30px;
+
   .product-description {
     margin-top: 10px
   }

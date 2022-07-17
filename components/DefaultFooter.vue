@@ -34,7 +34,8 @@
         <div class="about-us">
           <h3>About Us</h3>
           <p>
-            Bring your in-store and online sales together with Shopify. Gain insights about your business from one view so you can work smarter, move faster, and think bigger.
+            Bring your in-store and online sales together with Shopify. Gain insights about your business from one view
+            so you can work smarter, move faster, and think bigger.
           </p>
         </div>
       </div>
@@ -61,7 +62,7 @@ export default {
 </script>
 
 <style lang="scss">
-.footer-wrapper{
+.footer-wrapper {
   background-color: #f9f9f9;
 }
 
@@ -69,10 +70,12 @@ export default {
   margin: 75px 0;
   padding-top: 20px
 }
+
 .company {
-    display: flex;
-    justify-content: space-around;
+  display: flex;
+  justify-content: space-around;
 }
+
 .company-details {
   width: 350px;
   margin-bottom: 20px;
@@ -108,12 +111,14 @@ export default {
     font-weight: bold;
   }
 }
+
 .customer-service {
-    display: flex;
-    flex-direction: column;
-    margin-left: 20px
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px
 }
-.about-us{
-  margin-left:20px;
+
+.about-us {
+  margin-left: 20px;
 }
 </style>
