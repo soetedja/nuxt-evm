@@ -82,10 +82,11 @@ export default {
       width: 100%;
       height: 100%;
     }
+
     .sold,
     .badge,
     .stars {
-    font-weight: bold;
+      font-weight: bold;
       position: absolute;
       display: flex;
       justify-content: center;
@@ -95,18 +96,21 @@ export default {
       color: #fff;
       box-shadow: 0 4px 6px -1px rgb(0 0 0 / 10%), 0 2px 4px -1px rgb(0 0 0 / 6%);
     }
+
     .sold {
       top: 0;
       right: 0;
       background-color: #02c96c;
       border-radius: 0 0 0 16px;
     }
+
     .badge {
       top: 0;
       left: 0;
       background-color: #b52700;
       border-radius: 0 0 16px 0;
     }
+
     .stars {
       bottom: 0.5rem;
       right: 1rem;
@@ -127,10 +131,12 @@ export default {
       transition: all .3s ease;
     }
   }
+
   span.normal {
     text-decoration: line-through;
-    color:gray
+    color: gray
   }
+
   span.discount {
     font-size: 2.5rem;
     font-weight: bold;

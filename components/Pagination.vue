@@ -2,7 +2,7 @@
   <div class="row">
     <div class="pagination">
       <a href="">&laquo;</a>
-      <a v-for="i in totalPage" :key="i" :class="{active: i == page}" @click="setPage(i)">{{ i }} </a>
+      <a v-for="i in totalPage" :key="i" :class="{ active: i == page }" @click="setPage(i)">{{ i }} </a>
       <a href="">&raquo;</a>
     </div>
   </div>
@@ -32,9 +32,8 @@ export default {
 </script>
 
 <style lang="scss">
-
 .pagination {
-    margin-top:20px;
+    margin-top: 20px;
     float: right;
 
     a {

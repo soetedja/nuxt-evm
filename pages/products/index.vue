@@ -1,8 +1,20 @@
 <template>
   <div>
     <div class="container">
-      <ShowcaseProducts :data-source="topSellerProducts.items" :title="'Top Sellers'" :page="topSellersPage" :total-page="5" @set-page="getTopSellerProducts" />
-      <ShowcaseProducts :data-source="newArrivalProducts.items" :title="'New Arrivals'" :page="newArrivalsPage" :total-page="4" @set-page="getNewArrivalProducts" />
+      <ShowcaseProducts
+        :data-source="topSellerProducts.items"
+        :title="'Top Sellers'"
+        :page="topSellersPage"
+        :total-page="5"
+        @set-page="getTopSellerProducts"
+      />
+      <ShowcaseProducts
+        :data-source="newArrivalProducts.items"
+        :title="'New Arrivals'"
+        :page="newArrivalsPage"
+        :total-page="4"
+        @set-page="getNewArrivalProducts"
+      />
     </div>
   </div>
 </template>

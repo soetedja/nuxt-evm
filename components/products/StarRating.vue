@@ -1,6 +1,6 @@
 <template>
   <div>
-    <font-awesome-icon v-for="i in 5" :key="i" :icon="['fas', 'star']" :class="{checked : i <= rating}" />
+    <font-awesome-icon v-for="i in 5" :key="i" :icon="['fas', 'star']" :class="{ checked: i <= rating }" />
   </div>
 </template>
 
@@ -20,7 +20,7 @@ export default {
 </script>
 
 <style lang="scss">
-  .checked {
-      color: orange;
-    }
+.checked {
+  color: orange;
+}
 </style>
