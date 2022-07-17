@@ -10,7 +10,7 @@
           <span>{{ data.sold }} Sold</span>
         </div>
         <div class="stars">
-          <StarRating :rating="data.rating" />
+          <StarRating :rating="data.rating % 5" />
         </div>
         <div class="overview">
           {{ data.description }}

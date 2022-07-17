@@ -2,7 +2,7 @@
   <div>
     <div class="topnav" :class="{ responsive: isActive }">
       <div class="wrapper-nav">
-        <div class="logo-container">
+        <div class="logo-container" :hidden="isActive">
           <NuxtLogo />
         </div>
         <a href="/" :class="{ active: $nuxt.$route.name == 'index'}">Home</a>
