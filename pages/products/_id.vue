@@ -4,6 +4,9 @@
       <div class="col four">
         <div class="product-img">
           <img class="u-max-full-width" :src="productDetails.image" alt="">
+          <div v-if="productDetails.isBestSeller" class="badge">
+            <span>Best Seller</span>
+          </div>
         </div>
       </div>
       <div class="col five pl-10">
@@ -14,6 +17,12 @@
                 {{ productDetails.name }}
               </span>
             </div>
+          </div>
+          <div class="row  rating-container">
+            <StarRating :rating="productDetails.rating % 5" class="rating" /> ({{ productDetails.rating % 5 }})
+          </div>
+          <div class="row">
+            <span>Sold: </span> <span class="sold-number">{{ productDetails.sold }}</span>
           </div>
           <div class="row">
             <div class="product-description">
@@ -58,8 +67,10 @@
 </template>
 
 <script>
+import StarRating from '~/components/products/StarRating.vue'
 export default {
   name: 'ProductDetails',
+  components: { StarRating },
   async fetch () {
     await this.getProductDetails()
   },
@@ -96,17 +107,45 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 
 .product-img {
   margin-top: 20px;
+  .badge {
+      font-weight: bold;
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 10px;
+      height: 40px;
+      color: #fff;
+      box-shadow: 0 4px 6px -1px rgb(0 0 0 / 10%), 0 2px 4px -1px rgb(0 0 0 / 6%);
+      top: 20px;
+      left: 10px;
+      background-color: #b52700;
+      border-radius: 0 0 16px 0;
+    }
 }
 
 .title {
-  margin: 10px 0 ;
-    font-weight: 800;
-    font-size: 2.28571rem;
-    word-break: break-word;
+  margin-top: 10px;
+  font-weight: 800;
+  font-size: 2.28571rem;
+  word-break: break-word;
+}
+
+.rating-container {
+  font-weight: bold;
+
+  .rating {
+    margin: 0 10px 0 0;
+    float: left;
+  }
+}
+
+.sold-number {
+  font-weight: bold;
 }
 
 p.price {
@@ -116,15 +155,20 @@ p.price {
 
 .product-details {
   margin: 0 30px;
+  .product-description {
+    margin-top: 10px
+  }
 }
 
 .product-variations {
   margin: 10px 30px;
-  .title{
+
+  .title {
     font-weight: bold;
     font-size: 2rem;
   }
 }
+
 span.normal {
   text-decoration: line-through;
   color: gray

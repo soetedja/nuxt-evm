@@ -1,11 +1,12 @@
 <template>
   <div class="pt-10">
     <div class="row category-title">
-      <h1> {{ title }} </h1>
+      <h1> {{ title }}</h1>
     </div>
     <div class="top-products-grid">
       <ProductItem v-for="data in dataSource" :key="data.id" :data="data" />
     </div>
+    <Pagination :page="page" :total-page="totalPage" @set-page="handleSetPage" />
   </div>
 </template>
 
@@ -25,12 +26,27 @@ export default {
         return []
       },
       required: false
+    },
+    page: {
+      type: Number,
+      required: true
+    },
+    totalPage: {
+      type: Number,
+      required: true
     }
   },
   computed: {},
+  setPage () {
+    this.$emit('setpage')
+  },
   mounted () {
   },
-  methods: {}
+  methods: {
+    handleSetPage (page) {
+      this.$emit('set-page', page)
+    }
+  }
 }
 </script>
 
